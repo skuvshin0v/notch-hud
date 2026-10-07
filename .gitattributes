@@ -1,0 +1,3 @@
+# The built app ships inside the plugin; git should never try to diff or merge it.
+plugin/notch-hud/app/** binary
+*.wav binary

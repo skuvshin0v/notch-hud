@@ -1,0 +1,15 @@
+{
+  "name": "skuvshin0v",
+  "owner": {
+    "name": "Semyon Kuvshinov",
+    "url": "https://github.com/skuvshin0v"
+  },
+  "description": "Claude Code mods by skuvshin0v.",
+  "plugins": [
+    {
+      "name": "notch-hud",
+      "source": "./plugin/notch-hud",
+      "description": "A Dynamic Island-style HUD around the MacBook notch for Claude Code: session progress at a glance, answer questions and permission requests without going back to the terminal. macOS 15+ on Apple Silicon."
+    }
+  ]
+}

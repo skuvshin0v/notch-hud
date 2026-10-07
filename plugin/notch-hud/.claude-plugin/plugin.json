@@ -1,0 +1,21 @@
+{
+  "name": "notch-hud",
+  "version": "1.0.0",
+  "description": "A Dynamic Island-style HUD around the MacBook notch for Claude Code: session progress at a glance, answer questions and permission requests without going back to the terminal. macOS 15+ on Apple Silicon.",
+  "author": {
+    "name": "Semyon Kuvshinov",
+    "url": "https://github.com/skuvshin0v"
+  },
+  "homepage": "https://github.com/skuvshin0v/notch-hud",
+  "repository": "https://github.com/skuvshin0v/notch-hud",
+  "license": "MIT",
+  "keywords": [
+    "notch",
+    "hud",
+    "dynamic-island",
+    "macos",
+    "menu-bar",
+    "notifications"
+  ],
+  "types": "./types/index.d.ts"
+}

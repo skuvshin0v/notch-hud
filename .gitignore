@@ -1,0 +1,8 @@
+.DS_Store
+widget/build/
+# Laid by Claude Code at each load: the API types for the editor
+plugin/*/.claude-plugin/types/
+plugin/*/tsconfig.json
+# Worktrees of this repo made by Claude Code sessions
+.claude/worktrees/
+demo-feedback.md

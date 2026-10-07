@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the app (no warnings allowed)
+        run: |
+          ./widget/build.sh 2>&1 | tee build.log
+          if grep -q "warning:" build.log; then echo "::error::the build has warnings"; exit 1; fi
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Validate the plugin and the marketplace
+        run: |
+          claude plugin validate plugin/notch-hud
+          claude plugin validate .
+
+      - name: Test the mod
+        run: claude plugin test plugin/notch-hud
+
+      - name: Check the demo script
+        run: python3 -m py_compile scripts/demo.py widget/make_sounds.py

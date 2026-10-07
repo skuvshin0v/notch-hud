@@ -9,6 +9,8 @@ without switching back to the terminal.
 - Questions and permission requests ring a bell; answer them right in the island.
 - Type the next prompt in a session's card; stop a turn; jump to the session's terminal tab.
 
+> **Disclaimer.** This mod is entirely AI-generated. I built it for myself, and I am not a developer,
+> so expect rough edges. Any contributions — issues, fixes, ideas, pull requests — are welcome.
 > Notch HUD is an independent project, not made or endorsed by Anthropic.
 
 ## Requirements

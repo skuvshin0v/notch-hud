@@ -1,6 +1,6 @@
 {
   "name": "notch-hud",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Dynamic Island-style HUD around the MacBook notch for Claude Code: session progress at a glance, answer questions and permission requests without going back to the terminal. macOS 15+ on Apple Silicon.",
   "author": {
     "name": "Semyon Kuvshinov",

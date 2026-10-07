@@ -396,7 +396,13 @@ export const register: Register = on => {
     // The sh's parent is this claude process: the widget walks up from it to the app.
     const ppid = await $.process.run(['/bin/sh', '-c', 'echo $PPID']).catch(() => null)
     ctx.pid = Number(ppid?.stdout.trim() ?? 0) || 0
-    if (ctx.home === '' || !e.isInteractive) return started
+    // A person is at it in the terminal (interactive) or in an app that hosts Claude Code
+    // through the SDK and stays open (the VS Code and JetBrains extensions, the desktop app's
+    // Code tab: CLAUDE_CODE_ENTRYPOINT claude-vscode, claude-desktop, …). A one-shot
+    // `claude -p` is neither and stays out of the island.
+    const entrypoint = (await $.env.get('CLAUDE_CODE_ENTRYPOINT')) ?? ''
+    const hasPerson = e.isInteractive || /^claude-(vscode|desktop|jetbrains)/.test(entrypoint)
+    if (ctx.home === '' || !hasPerson) return started
     await patch($, f => {
       f.host = ctx.host
       f.hostName = ctx.hostName
